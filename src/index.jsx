@@ -4,6 +4,8 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import fetch from 'isomorphic-fetch';
+
 import { AppContainer } from 'react-hot-loader';
 import ApplicationComponent from './components/application';
 

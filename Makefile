@@ -2,6 +2,10 @@ all: production
 
 
 production:
+	babel src -d lib
+
+
+static:
 	webpack -p
 
 

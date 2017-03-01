@@ -27,18 +27,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
 
-        use: 'babel-loader?' + JSON.stringify({
-          "plugins": [
-            "react-hot-loader/babel",
-            "tcomb",
-          ],
-
-          "presets": [
-            ["es2015", { "modules": false }],
-            "stage-2",
-            "react"
-          ]
-        }),
+        use: 'babel-loader',
       },
 
       {
@@ -64,9 +53,9 @@ module.exports = {
 
   plugins: [
     new HTMLPlugin({
-      title: 'React + Webpack2',
       inject: 'body',
-      template: source('index.ejs'),
+      template: local('index.ejs'),
+      initialContent: '',
     }),
 
     new webpack.NamedModulesPlugin,

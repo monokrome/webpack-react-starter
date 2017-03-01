@@ -10,9 +10,14 @@ Getting started quickly should be painless:
 - `cd myproject`
 - `git remote remove origin`
 - `npm install`
-- `npm start`
 
-A simple React application should now be running at http://localhost:8080/
+For frontend-only applications:
+- `npm start` or `npm run frontend`
+
+For server-side rendered applications:
+- `npm run server`
+
+A simple React application should now be running at http://localhost:8080/.
 
 
 

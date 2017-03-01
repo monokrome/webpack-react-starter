@@ -1,3 +1,7 @@
+# Build artifacts
+/lib/*
+
+
 # Log files - most noteably npm-debug.log
 *.log
 
