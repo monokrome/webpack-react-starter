@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "react-hot-loader/babel",
+    "tcomb",
+  ],
+
+  "presets": [
+    "es2015",
+    "stage-2",
+    "react"
+  ]
+}

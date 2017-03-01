@@ -13,3 +13,6 @@
 # Non-git hidden files
 .*
 !.git*
+
+# Allow babel configuration
+!.babelrc
