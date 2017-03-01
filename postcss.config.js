@@ -20,12 +20,6 @@ module.exports = () => ({
     // https://github.com/postcss/postcss-custom-selectors
     require('postcss-custom-selectors')(),
 
-    // Strip units from variables 
-    require('postcss-strip-units')(),
-
-    // Pre-compile operators.
-    require('postcss-math')(),
-
     // W3C calc() function, e.g. div { height: calc(100px - 2em); }
     // https://github.com/postcss/postcss-calc
     require('postcss-calc')(),
@@ -33,10 +27,6 @@ module.exports = () => ({
     // Allows you to nest one style rule inside another
     // https://github.com/jonathantneal/postcss-nesting
     require('postcss-nesting')(),
-
-    // W3C color() function, e.g. div { background: color(red alpha(90%)); }
-    // https://github.com/postcss/postcss-color-function
-    require('postcss-color-function')(),
 
     // Convert CSS shorthand filters to SVG equivalent, e.g. .blur { filter: blur(4px); }
     // https://github.com/iamvdo/pleeease-filters
@@ -49,10 +39,6 @@ module.exports = () => ({
     // Transforms :not() W3C CSS Level 4 pseudo class to :not() CSS Level 3 selectors
     // https://github.com/postcss/postcss-selector-not
     require('postcss-selector-not')(),
-
-    // Postcss flexbox bug fixer
-    // https://github.com/luisrudge/postcss-flexbugs-fixes
-    require('postcss-flexbugs-fixes')(),
 
     // Add vendor prefixes to CSS rules using values from caniuse.com
     // https://github.com/postcss/autoprefixer
