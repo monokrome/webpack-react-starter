@@ -8,6 +8,7 @@ Getting started quickly should be painless:
 
 - `git clone https://github.com/monokrome/webpack-react-starter myproject`
 - `cd myproject`
+- `git remote remove origin`
 - `npm install`
 - `npm start`
 
