@@ -30,6 +30,7 @@ module.exports = {
         use: 'babel-loader?' + JSON.stringify({
           "plugins": [
             "react-hot-loader/babel",
+            "tcomb",
           ],
 
           "presets": [
