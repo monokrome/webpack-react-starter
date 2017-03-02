@@ -11,7 +11,7 @@
   "main": "lib/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "BABEL_ENV=services nodemon --exec babel-node -e js,jsx,css,json -w src -w webpack.config.js -w .babelrc -w postcss.config.js src/server.js",
+    "server": "BABEL_ENV=services nodemon --exec babel-node -e js,jsx,css,json -w src -w webpack.config.js -w .babelrc -w postcss.config.js src/services",
     "frontend": "webpack-dev-server --hot --inline"
   },
   "devDependencies": {
