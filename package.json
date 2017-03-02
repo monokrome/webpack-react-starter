@@ -11,7 +11,7 @@
   "main": "lib/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "BABEL_ENV=services nodemon --exec babel-node -e js,jsx,css,json -w src src/server.js",
+    "server": "BABEL_ENV=services nodemon --exec babel-node -e js,jsx,css,json -w src -w webpack.config.js -w .babelrc -w postcss.config.js src/server.js",
     "frontend": "webpack-dev-server --hot --inline"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "css-loader": "^0.26.2",
+    "extract-text-webpack-plugin": "^2.0.0",
     "html-webpack-plugin": "^2.28.0",
     "isomorphic-fetch": "^2.2.1",
     "nodemon": "^1.11.0",

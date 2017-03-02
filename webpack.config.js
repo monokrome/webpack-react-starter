@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const local = (...paths) => path.resolve(__dirname, ...paths);
@@ -11,14 +12,17 @@ const assets = (...paths) => local('assets', ...paths);
 
 module.exports = {
   context: source(),
-  entry: [
-    'react-hot-loader/patch',
-    source('index.jsx')
-  ],
+
+  entry: {
+    application: [
+      'react-hot-loader/patch',
+      source('index.jsx')
+    ]
+  },
 
   output: {
     path: lib(),
-    filename: 'application.js',
+    filename: '[name].js',
   },
 
   module: {
@@ -32,11 +36,9 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader?modules',
-          'postcss-loader',
-        ],
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader?modules!postcss-loader',
+        }),
       },
     ]
   },
@@ -52,12 +54,13 @@ module.exports = {
   devtool: 'inline-source-map',
 
   plugins: [
+    new ExtractTextPlugin('application.css'),
+    new webpack.NamedModulesPlugin,
+
     new HTMLPlugin({
       inject: 'body',
       template: local('index.ejs'),
       initialContent: '',
     }),
-
-    new webpack.NamedModulesPlugin,
   ],
 }
