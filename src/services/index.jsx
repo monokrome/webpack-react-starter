@@ -1,3 +1,6 @@
+// TODO: This is a prototype. It works, but I'd like to clean it up.
+
+
 const chalk = require('chalk');
 const ejs = require('ejs');
 const fs = require('fs');

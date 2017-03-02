@@ -8,5 +8,18 @@
     "es2015",
     "stage-2",
     "react"
-  ]
+  ],
+
+  "env": {
+    "services": {
+      "plugins": [
+        "react-hot-loader/babel",
+        "tcomb",
+        ["css-modules-transform", {
+          "generateScopedName": "[hash:8]",
+          "extensions": [".css"],
+        }],
+      ]
+    }
+  }
 }

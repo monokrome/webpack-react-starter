@@ -11,7 +11,7 @@
   "main": "lib/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "nodemon --exec babel-node -e js,jsx,css,json -w src src/server.js",
+    "server": "BABEL_ENV=services nodemon --exec babel-node -e js,jsx,css,json -w src src/server.js",
     "frontend": "webpack-dev-server --hot --inline"
   },
   "devDependencies": {
@@ -19,6 +19,7 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-css-modules-transform": "^1.2.1",
     "babel-plugin-tcomb": "^0.3.24",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
