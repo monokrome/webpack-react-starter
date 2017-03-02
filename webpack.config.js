@@ -26,12 +26,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-
         use: 'babel-loader',
       },
 
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader?modules',
@@ -42,7 +42,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.css'],
 
     modules: [
       path.resolve(__dirname, 'node_modules'),

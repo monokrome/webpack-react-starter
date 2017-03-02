@@ -12,7 +12,7 @@
   "scripts": {
     "start": "npm run server",
     "server": "nodemon --exec babel-node -e js,jsx,css,json -w src src/server.js",
-    "frontend": "webpack-dev-server --hot --inline --progress"
+    "frontend": "webpack-dev-server --hot --inline"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
