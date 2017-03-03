@@ -51,10 +51,10 @@ module.exports = {
     ],
   },
 
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
 
   plugins: [
-    new ExtractTextPlugin('application.css'),
+    new ExtractTextPlugin('[name].css'),
     new webpack.NamedModulesPlugin,
 
     new HTMLPlugin({
