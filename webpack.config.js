@@ -37,7 +37,7 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
-          use: 'css-loader?modules!postcss-loader',
+          use: 'css-loader?modules=true&localIdentName=[hash:8]!postcss-loader',
         }),
       },
     ]
@@ -51,7 +51,7 @@ module.exports = {
     ],
   },
 
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
 
   plugins: [
     new ExtractTextPlugin('application.css'),
