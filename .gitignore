@@ -1,0 +1,19 @@
+# Build output
+/dist/*
+
+
+# Package locking
+*-lock.json
+
+
+# Node dependencies
+/node_modules/*
+
+
+# Non-git hidden file patterns
+.*
+!.git*
+
+# Configuration files
+!.babelrc
+
