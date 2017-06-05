@@ -8,8 +8,7 @@
     "test": "jest",
     "develop": "webpack-dev-server --hot --inline",
     "services": "NODE_PATH=./src&& nodemon -w package.json -w .babelrc -w webpack.config.js -w src/services -e js -e jsx -x babel-node src/services",
-    "lint": "flow && eslint src",
-    "prettier": "prettier --no-color --parser flow --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\""
+    "lint": "flow-typed install > /dev/null && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\" && eslint --fix src/services && flow"
   },
   "author": "",
   "license": "MIT",
@@ -33,10 +32,13 @@
     "extract-loader": "^0.1.0",
     "file-loader": "^0.11.1",
     "flow": "^0.2.3",
+    "flow-bin": "^0.47.0",
+    "flow-typed": "^2.1.2",
     "glob": "^7.1.2",
     "html-loader": "^0.4.5",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^20.0.4",
+    "jsdom": "^11.0.0",
     "nodemon": "^1.11.0",
     "prettier": "^1.4.2",
     "prop-types": "^15.5.10",

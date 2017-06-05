@@ -10,6 +10,10 @@
 /node_modules/*
 
 
+# Typings
+/flow-typed/
+
+
 # Non-git hidden file patterns
 .*
 !.git*

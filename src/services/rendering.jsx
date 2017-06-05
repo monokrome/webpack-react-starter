@@ -5,7 +5,7 @@ const fs = require('fs')
 const Application = require('../components/application').default
 const { ServerStyleSheet } = require('styled-components')
 
-module.exports = request => {
+module.exports = function render() {
   const sheet = new ServerStyleSheet()
   const document = DOM.renderToString(sheet.collectStyles(<Application />))
   const stylesheet = sheet.getStyleTags()
