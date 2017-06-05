@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-
 export default class Header extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
@@ -9,7 +8,6 @@ export default class Header extends React.Component {
 
   render() {
     const { title } = this.props
-    return <h3>{ title }</h3>
+    return <h3>{title}</h3>
   }
 }
-

@@ -2,13 +2,11 @@ const DOM = require('react-dom/server')
 const React = require('react')
 const fs = require('fs')
 
-
 const Application = require('../components/application').default
-const {ServerStyleSheet} = require('styled-components')
+const { ServerStyleSheet } = require('styled-components')
 
-
-module.exports = (request) => {
-  const sheet = new ServerStyleSheet
+module.exports = request => {
+  const sheet = new ServerStyleSheet()
   const document = DOM.renderToString(sheet.collectStyles(<Application />))
   const stylesheet = sheet.getStyleTags()
 
@@ -18,11 +16,11 @@ module.exports = (request) => {
       <head>
         <meta charset=UTF-8>
         <title>Welcome to React</title>
-        ${ stylesheet }
+        ${stylesheet}
       </head>
 
       <body>
-        <div id="root">${ document }</div>
+        <div id="root">${document}</div>
         <script src=/index.js></script>
       </body>
     </html>
