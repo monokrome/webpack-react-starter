@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "jest",
-    "develop": "webpack-dev-server --hot --inline"
+    "develop": "webpack-dev-server --hot --inline",
+    "services": "NODE_PATH=./src babel-node src/services"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +13,7 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "extract-loader": "^0.1.0",
