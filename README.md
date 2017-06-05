@@ -8,7 +8,9 @@ server-side rendering as well as static rendering for React projects.
 To create a new React application with it, you can follow the following steps:
 
   > git clone https://github.com/monokrome/webpack-react-starter myproject
+
   > cd myproject
+
   > npm install
 
 To run a development (not production-ready yet) server for server-side
