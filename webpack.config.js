@@ -2,16 +2,16 @@ const glob = require('glob')
 const path = require('path')
 
 
-const pageFiles = []
+const applicationEntries = []
 
 
-for (const location of glob.sync('src/pages/*/index.jsx'))
-  pageFiles.push(path.resolve(location))
+for (const location of glob.sync('src/applications/*/index.jsx'))
+  applicationEntries.push(path.resolve(location))
 
 
 module.exports = {
   context: __dirname,
-  entry: pageFiles,
+  entry: applicationEntries,
 
   output: {
     path: path.resolve('dist'),

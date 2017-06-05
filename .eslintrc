@@ -11,7 +11,8 @@
     "console": true,
     "document": true,
     "process": true,
-    "exports": true,
+    "module": true,
+    "__dirname": true,
   },
 
   "ecmaFeatures": {
