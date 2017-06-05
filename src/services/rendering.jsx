@@ -14,14 +14,16 @@ module.exports = (request) => {
 
   return `<!DOCTYPE html>
     
-    <html charset=UTF-8>
+    <html>
       <head>
+        <meta charset=UTF-8>
         <title>Welcome to React</title>
         ${ stylesheet }
       </head>
 
       <body>
-        ${ document }
+        <div id="root">${ document }</div>
+        <script src=/index.js></script>
       </body>
     </html>
   `

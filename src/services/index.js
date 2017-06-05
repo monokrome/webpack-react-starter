@@ -21,7 +21,7 @@ function handleRequest(request, response) {
 
 
 function bootstrap(app) {
-  app.get('*', handleRequest)
+  app.get('/', handleRequest)
 }
 
 
