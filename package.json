@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "start": "npm run services",
     "test": "jest",
     "develop": "webpack-dev-server --hot --inline",
-    "services": "NODE_PATH=./src babel-node src/services"
+    "services": "NODE_PATH=./src&& nodemon -w package.json -w .babelrc -w webpack.config.js -w src/services -e js -e jsx -x babel-node src/services"
   },
   "author": "",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "glob": "^7.1.2",
     "html-loader": "^0.4.5",
     "jest": "^20.0.4",
+    "nodemon": "^1.11.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
