@@ -2,12 +2,12 @@
 
 const path = require('path')
 
-const WebPackDevServer = require('webpack-dev-server')
 const configuration = require('../../webpack.config.js')
 const webpack = require('webpack')
 
 const render = require('./rendering')
 
+const WebPackDevServer = require('webpack-dev-server')
 
 const port = process.env.PORT || 3030
 const address = 'http://localhost:' + port
