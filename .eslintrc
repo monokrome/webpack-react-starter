@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+
+  "plugins": [
+    "react"
+  ],
+
+  "globals": {
+    "require": true,
+    "console": true,
+    "document": true,
+    "process": true,
+    "exports": true,
+  },
+
+  "ecmaFeatures": {
+    "jsx": true
+  }
+}

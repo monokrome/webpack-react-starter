@@ -20,4 +20,6 @@
 
 # Configuration files
 !.babelrc
+!.flowconfig
+!.eslintrc
 
