@@ -30,7 +30,6 @@ module.exports = {
   module: {
     loaders: [
       {loader: 'babel-loader', test: /\.jsx?$/, exclude: [path.resolve('node_modules')] },
-      {loader: 'file-loader?name=index.css!extract-loader!css-loader', test: /\.css$/},
       {loader: 'url-loader', test: /\.png$/},
       {loader: 'file-loader', test: /\.(ttf|eot|svg)$/},
 
