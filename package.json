@@ -7,7 +7,7 @@
     "start": "npm run services",
     "test": "jest",
     "develop": "webpack-dev-server --hot --inline",
-    "services": "NODE_PATH=./src nodemon -w package.json -w .babelrc -w webpack.config.js -w src -e js -e jsx -x babel-node src/services",
+    "services": "NODE_PATH=./src nodemon -w package.json -w .babelrc -w webpack.config.js -w src/services -e js -e jsx -x babel-node src/services",
     "lint": "flow-typed install > /dev/null && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\" && eslint --fix src/services && flow"
   },
   "author": "",
