@@ -6,7 +6,7 @@ const webpack = require('webpack')
 
 const applicationEntries = [
   'webpack-dev-server/client?http://localhost:3030',
-  'webpack/hot/dev-server',
+  'webpack/hot/only-dev-server',
 ]
 
 
@@ -34,7 +34,12 @@ module.exports = {
 
   module: {
     loaders: [
-      {loader: 'babel-loader', test: /\.jsx?$/, exclude: [path.resolve('node_modules')] },
+      {
+        use: ['babel-loader', 'webpack-module-hot-accept'],
+        test: /\.jsx?$/,
+        exclude: [
+          path.resolve('node_modules'),
+      ] },
       {loader: 'url-loader', test: /\.png$/},
       {loader: 'file-loader', test: /\.(ttf|eot|svg)$/},
 
