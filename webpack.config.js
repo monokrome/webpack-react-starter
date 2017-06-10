@@ -4,7 +4,10 @@ const path = require('path')
 const webpack = require('webpack')
 
 
-const applicationEntries = []
+const applicationEntries = [
+  'webpack-dev-server/client?http://localhost:3030',
+  'webpack/hot/dev-server',
+]
 
 
 for (const location of glob.sync('src/applications/*/index.jsx'))
@@ -13,7 +16,7 @@ for (const location of glob.sync('src/applications/*/index.jsx'))
 
 module.exports = {
   context: __dirname,
-  entry: applicationEntries,
+  entry: () => applicationEntries,
 
   output: {
     path: path.resolve('dist'),
