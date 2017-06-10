@@ -1,6 +1,8 @@
 const glob = require('glob')
 const path = require('path')
 
+const webpack = require('webpack')
+
 
 const applicationEntries = []
 
@@ -50,11 +52,15 @@ module.exports = {
     inline: true,
     stats: 'errors-only',
     port: 3030,
-    contentBase: path.resolve('dist'),
+    contentBase: path.resolve('src'),
 
     overlay: {
       warnings: true,
       errors: true,
     },
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 }

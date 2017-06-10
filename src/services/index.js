@@ -19,4 +19,4 @@ function bootstrap(app) {
   app.get('/', handleRequest)
 }
 
-new WebPackDevServer(compiler, { setup: bootstrap }).listen(port)
+new WebPackDevServer(compiler, {setup: bootstrap}).listen(port)
