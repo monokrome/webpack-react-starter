@@ -8,3 +8,6 @@ require('./index.html')
 
 
 ReactDOM.render(<Application />, document.getElementById('root'))
+
+
+console.log(module.hot)

@@ -3,16 +3,21 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "development": "NODE_ENV=development npm run services",
+    "production": "NODE_ENV=production npm run services",
+    "services": "NODE_PATH=./src nodemon -d 3 -w package.json -w .babelrc -w webpack.config.js -e js -e jsx -x babel-node src/services",
+    "build": "NODE_ENV=production webpack -p",
     "precommit": "npm run lint",
-    "start": "npm run services",
+    "start": "NODE_ENV=development npm run services",
+    "frontend": "NODE_ENV=development webpack-dev-server --hot --inline",
+    "lint": "flow-typed install > /dev/null && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\" && eslint --fix src/services && flow",
     "test": "jest",
-    "develop": "webpack-dev-server --hot --inline",
-    "services": "NODE_PATH=./src nodemon -w package.json -w .babelrc -w webpack.config.js -e js -e jsx -x babel-node src/services",
-    "lint": "flow-typed install > /dev/null && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\" && eslint --fix src/services && flow"
+    "develop": "npm run development"
   },
-  "author": "",
+  "author": "Bailey Stoner <monokrome@monokro.me>",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -47,7 +52,6 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-flow": "^2.0.0-rc.1",
     "webpack-module-hot-accept": "^1.0.5"
   },
   "jest": {

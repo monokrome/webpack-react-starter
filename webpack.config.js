@@ -3,20 +3,19 @@ const path = require('path')
 
 const webpack = require('webpack')
 
-
-const applicationEntries = [
-  'webpack-dev-server/client?http://localhost:3030',
-  'webpack/hot/only-dev-server',
-]
+const APPLICATION_ENTRIES = []
+const PLUGINS = []
+const SCRIPT_LOADERS = ['babel-loader']
 
 
-for (const location of glob.sync('src/applications/*/index.jsx'))
-  applicationEntries.push(path.resolve(location))
+for (const location of glob.sync('src/applications/*/index.jsx')) {
+  APPLICATION_ENTRIES.push(path.resolve(location))
+}
 
 
 module.exports = {
   context: __dirname,
-  entry: () => applicationEntries,
+  entry: APPLICATION_ENTRIES,
 
   output: {
     path: path.resolve('dist'),
@@ -35,19 +34,25 @@ module.exports = {
   module: {
     loaders: [
       {
-        use: ['babel-loader', 'webpack-module-hot-accept'],
+        use: SCRIPT_LOADERS,
         test: /\.jsx?$/,
+
         exclude: [
           path.resolve('node_modules'),
-      ] },
+        ],
+      },
+
+      {
+        test: /\.html$/,
+        use: [
+          'file-loader?name=[name].[ext]',
+          'extract-loader',
+          'html-loader',
+        ],
+      },
+
       {loader: 'url-loader', test: /\.png$/},
       {loader: 'file-loader', test: /\.(ttf|eot|svg)$/},
-
-      {test: /\.html$/, use: [
-        'file-loader?name=[name].[ext]',
-        'extract-loader',
-        'html-loader',
-      ]},
     ],
   },
 
@@ -56,11 +61,13 @@ module.exports = {
   },
 
   devServer: {
-    hot: true,
-    inline: true,
-    stats: 'errors-only',
     port: 3030,
     contentBase: path.resolve('src'),
+
+    hot: true,
+    inline: true,
+
+    stats: 'errors-only',
 
     overlay: {
       warnings: true,
@@ -68,7 +75,5 @@ module.exports = {
     },
   },
 
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: PLUGINS,
 }

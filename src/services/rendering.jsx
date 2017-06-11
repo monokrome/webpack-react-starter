@@ -5,13 +5,15 @@ const fs = require('fs')
 const Application = require('../components/application').default
 const { ServerStyleSheet } = require('styled-components')
 
-module.exports = function render() {
+
+module.exports = function render(request) {
   const sheet = new ServerStyleSheet()
   const document = DOM.renderToString(sheet.collectStyles(<Application />))
   const stylesheet = sheet.getStyleTags()
 
-  return `<!DOCTYPE html>
-    
+  return `
+    <DOCTYPE html>
+
     <html>
       <head>
         <meta charset=UTF-8>
