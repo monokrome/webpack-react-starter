@@ -3,7 +3,9 @@
   "extends": "eslint:recommended",
 
   "plugins": [
-    "react"
+    "react",
+    "jsx-a11y",
+    "flowtype"
   ],
 
   "globals": {
@@ -16,6 +18,19 @@
   },
 
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": true,
+    "modules": true
+  },
+
+  "env": {
+    "browser": true,
+    "node": true,
+  },
+
+  "rules": {
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
   }
 }

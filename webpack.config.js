@@ -4,11 +4,15 @@ const path = require('path')
 const webpack = require('webpack')
 
 const APPLICATION_ENTRIES = []
-const PLUGINS = []
 const SCRIPT_LOADERS = ['babel-loader']
 
 
 for (const location of glob.sync('src/applications/*/index.jsx')) {
+  APPLICATION_ENTRIES.push(path.resolve(location))
+}
+
+
+for (const location of glob.sync('src/applications/*/*.html')) {
   APPLICATION_ENTRIES.push(path.resolve(location))
 }
 
@@ -64,9 +68,6 @@ module.exports = {
     port: 3030,
     contentBase: path.resolve('src'),
 
-    hot: true,
-    inline: true,
-
     stats: 'errors-only',
 
     overlay: {
@@ -75,5 +76,5 @@ module.exports = {
     },
   },
 
-  plugins: PLUGINS,
+  plugins: [],
 }

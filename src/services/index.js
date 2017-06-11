@@ -1,8 +1,13 @@
-const environment = process.env.NODE_ENV || 'development'
+const render = require('./rendering')
 
-const Service = require('./environments/' + environment)
+function getServiceClass() {
+  switch (process.env.NODE_ENV || 'development') {
+    case 'production':
+      return require('./environments/production')
+    default:
+      return require('./environments/development')
+  }
+}
 
-
-module.exports = new Service({
-  render: require('./rendering'),
-})
+const Service = getServiceClass()
+module.exports = new Service(render)

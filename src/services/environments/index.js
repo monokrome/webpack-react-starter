@@ -1,31 +1,35 @@
 class ReactRenderingService {
-  constructor(options) {
-    options = options || {}
-    this.render = options.render
-    this.createServer(options)
+  options: Object
+  render: Function
+  service: Object
+
+  constructor(render: Function, options: Object = {}) {
+    this.options = options
+    this.render = render
+
+    this.createServer()
   }
 
   createServer() {
     throw new Error(
-      'createServer must be implemented on ReactRenderingService subclasses.'
+      'createServer must be implemented on ReactRenderingService subclasses.',
     )
   }
 
-  setService(options, service) {
+  setService(service: Object) {
     this.service = service
-    this.listen(options.port)
+    this.listen(this.options.port)
     return this.service
   }
 
-  handleRequest(request, response) {
-    response.writeHead(200, {'Content-Type': 'text/html'})
+  handleRequest(request: Object, response: Object) {
+    response.writeHead(200, { 'Content-Type': 'text/html' })
     return response.end(this.render(request))
   }
 
-  listen(port) {
+  listen(port: number) {
     this.service.listen(process.env.PORT || port || 3030)
   }
 }
-
 
 module.exports = ReactRenderingService
