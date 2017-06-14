@@ -4,7 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const APPLICATION_ENTRIES = []
-const SCRIPT_LOADERS = ['babel-loader']
+const SCRIPT_LOADERS = ['babel-loader?retainLines=true']
 
 
 for (const location of glob.sync('src/applications/*/index.jsx')) {
@@ -19,6 +19,7 @@ for (const location of glob.sync('src/applications/*/*.html')) {
 
 module.exports = {
   context: __dirname,
+  devtool: '#source-map',
   entry: APPLICATION_ENTRIES,
 
   output: {
