@@ -17,9 +17,11 @@
   "author": "Bailey Stoner <monokrome@monokro.me>",
   "license": "MIT",
   "dependencies": {
+    "eslint-plugin-react": "^7.1.0",
     "express": "^4.15.3",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "url-loader": "^0.5.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
