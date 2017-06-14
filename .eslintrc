@@ -5,7 +5,8 @@
   "plugins": [
     "react",
     "jsx-a11y",
-    "flowtype"
+    "flowtype",
+    "import"
   ],
 
   "globals": {
