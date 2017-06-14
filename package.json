@@ -17,10 +17,12 @@
   "author": "Bailey Stoner <monokrome@monokro.me>",
   "license": "MIT",
   "dependencies": {
-    "eslint-plugin-react": "^7.1.0",
     "express": "^4.15.3",
-    "react": "^15.6.0",
-    "react-dom": "^15.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jsdom": "^11.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "styled-components": "^2.0.0",
     "url-loader": "^0.5.9"
   },
   "devDependencies": {
@@ -37,7 +39,7 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react": "^7.1.0",
     "extract-loader": "^0.1.0",
     "file-loader": "^0.11.1",
     "flow": "^0.2.3",
@@ -45,18 +47,14 @@
     "flow-typed": "^2.1.2",
     "glob": "^7.1.2",
     "html-loader": "^0.4.5",
-    "isomorphic-fetch": "^2.2.1",
     "jest": "^20.0.4",
-    "jsdom": "^11.0.0",
     "nodemon": "^1.11.0",
     "pleeease-filters": "^4.0.0",
     "prettier": "^1.4.2",
     "prop-types": "^15.5.10",
-    "styled-components": "^2.0.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5",
-    "webpack-module-hot-accept": "^1.0.5"
+    "webpack-dev-server": "^2.4.5"
   },
   "jest": {
     "moduleFileExtensions": [
