@@ -1,6 +1,9 @@
 # Log files (usually from NPM)
 *.log
 
+# Server-side rendering output from `npm run build`
+/lib/
+
 # Build output
 /dist/*
 
