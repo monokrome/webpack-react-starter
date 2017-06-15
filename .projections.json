@@ -1,0 +1,34 @@
+{
+  "src/applications/*/index.jsx": {
+    "type": "App",
+    "alternate": "src/applications/{snakecase}/index.test.jsx"
+  },
+
+  "src/applications/index/index.jsx": {
+    "type": "App",
+    "alternate": "src/applications/index/index.test.jsx"
+  },
+
+  "src/components/*/index.jsx": {
+    "type": "Component",
+    "alternate": "src/components/{snakecase}/index.test.jsx",
+    "template": [
+      "import React from 'react'",
+      "",
+      "export default () => <h1>{camelcase|capitalize}</h1>"
+    ]
+  },
+
+  "src/services/*.js": {
+    "type": "Service",
+    "alternate": "src/services/{snakecase}.test.js"
+  },
+
+  "README.md": {
+    "type": "Readme"
+  },
+
+  "package.json": {
+    "type": "package"
+  }
+}

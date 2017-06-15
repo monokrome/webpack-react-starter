@@ -25,4 +25,4 @@
 !.babelrc
 !.flowconfig
 !.eslintrc
-
+!.projections.json
