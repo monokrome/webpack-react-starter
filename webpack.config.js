@@ -10,7 +10,7 @@ for (const moduleName of fs.readdirSync(APPLICATIONS_PATH))
 
 module.exports = {
   context: __dirname,
-  devtool: "#source-map",
+  devtool: "sourcemap",
   entry: APPLICATION_ENTRIES,
 
   output: {
