@@ -1,18 +1,18 @@
-const configuration = require("../../../webpack.config.js");
-const webpack = require("webpack");
-const WebpackDevServer = require("webpack-dev-server");
+const configuration = require('../../../webpack.config.js')
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
 
-const ReactRenderingService = require("./index");
+const ReactRenderingService = require('./index')
 
-const DEV_CLIENT_PATH = "webpack-dev-server/client?http://localhost:3030";
+const DEV_CLIENT_PATH = 'webpack-dev-server/client?http://localhost:3030'
 
-configuration.plugins.push(new webpack.HotModuleReplacementPlugin());
-configuration.plugins.push(new webpack.NamedModulesPlugin());
+configuration.plugins.push(new webpack.HotModuleReplacementPlugin())
+configuration.plugins.push(new webpack.NamedModulesPlugin())
 
 // Prepends code for the websocket client and HMR support
 for (const key in configuration.entry) {
-  configuration.entry[key].unshift(DEV_CLIENT_PATH);
-  configuration.entry[key].unshift("webpack/hot/dev-server");
+  configuration.entry[key].unshift(DEV_CLIENT_PATH)
+  configuration.entry[key].unshift('webpack/hot/only-dev-server')
 }
 
 class ReactDevelopmentRenderingService extends ReactRenderingService {
@@ -22,8 +22,8 @@ class ReactDevelopmentRenderingService extends ReactRenderingService {
         hot: true,
         lazy: false
       })
-    );
+    )
   }
 }
 
-module.exports = ReactDevelopmentRenderingService;
+module.exports = ReactDevelopmentRenderingService

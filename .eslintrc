@@ -10,12 +10,14 @@
   ],
 
   "globals": {
-    "require": true,
+    "__dirname": true,
     "console": true,
     "document": true,
-    "process": true,
+    "expect": true,
     "module": true,
-    "__dirname": true,
+    "process": true,
+    "require": true,
+    "test": true,
   },
 
   "ecmaFeatures": {

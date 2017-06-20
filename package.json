@@ -12,6 +12,7 @@
     "frontend": "NODE_ENV=development webpack-dev-server --hot --inline",
     "lint": "flow-typed install > /dev/null && prettier --no-color --trailing-comma all --no-semi --single-quote --write \"src/**/*.js\" \"src/**/*.jsx\" && eslint --fix src/services && flow",
     "test": "jest",
+    "tests": "jest --watch --notify",
     "develop": "npm run development"
   },
   "author": "Bailey Stoner <monokrome@monokro.me>",
