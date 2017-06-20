@@ -12,7 +12,7 @@ configuration.plugins.push(new webpack.NamedModulesPlugin())
 // Prepends code for the websocket client and HMR support
 for (const key in configuration.entry) {
   configuration.entry[key].unshift(DEV_CLIENT_PATH)
-  configuration.entry[key].unshift('webpack/hot/only-dev-server')
+  configuration.entry[key].unshift('webpack/hot/dev-server')
 }
 
 class ReactDevelopmentRenderingService extends ReactRenderingService {
