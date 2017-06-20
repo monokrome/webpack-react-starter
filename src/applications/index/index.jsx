@@ -1,8 +1,10 @@
-import "./index.html";
+import './index.html'
 
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import Application from "components/application";
+import Application from 'components/application'
 
-ReactDOM.render(<Application />, document.getElementById("root"));
+ReactDOM.render(<Application />, document.getElementById('root'))
+
+if (module.hot) module.hot.accept()
