@@ -5,6 +5,7 @@
   "plugins": [
     "react",
     "jsx-a11y",
+    "prettier",
     "flowtype",
     "import"
   ],
@@ -17,23 +18,46 @@
     "module": true,
     "process": true,
     "require": true,
-    "test": true,
+    "test": true
   },
 
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
 
   "env": {
+    "es6": true,
     "browser": true,
-    "node": true,
+    "node": true
   },
 
   "rules": {
     "strict": [2, "never"],
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2
+    "react/react-in-jsx-scope": 2,
+    "semi": ["error", "never"],
+    "max-len": ["error", 79],
+
+    "prettier/prettier": ["error", {
+      "bracketSpacing": false,
+      "jsxBracketSameLine": true,
+      "parser": "flow",
+      "printWidth": 79,
+      "semi": false,
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "all",
+      "useTabs": false
+    }],
+
+    "space-before-function-paren": ["error", {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+    }]
   }
 }

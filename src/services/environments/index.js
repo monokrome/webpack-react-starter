@@ -23,7 +23,7 @@ export default class ReactRenderingService {
   }
 
   handleRequest(request: Object, response: Object) {
-    response.writeHead(200, { 'Content-Type': 'text/html' })
+    response.writeHead(200, {'Content-Type': 'text/html'})
     return response.end(this.render(request))
   }
 

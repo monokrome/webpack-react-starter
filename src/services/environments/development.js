@@ -20,8 +20,8 @@ export default class ReactDevelopmentRenderingService extends ReactRenderingServ
     this.setService(
       new WebpackDevServer(webpack(configuration), {
         hot: true,
-        lazy: false
-      })
+        lazy: false,
+      }),
     )
   }
 }

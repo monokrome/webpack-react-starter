@@ -43,6 +43,7 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.1.0",
     "extract-loader": "^1.0.1",
     "file-loader": "^1.1.5",
@@ -53,7 +54,8 @@
     "html-loader": "^0.5.1",
     "jest": "^21.2.1",
     "pleeease-filters": "^4.0.0",
-    "prettier": "^1.4.2",
+    "prettier": "^1.8.2",
+    "prettier-eslint-cli": "^4.4.0",
     "prop-types": "^15.5.10",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.4.5"
