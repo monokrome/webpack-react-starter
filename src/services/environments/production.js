@@ -6,7 +6,7 @@ const ReactRenderingService = require('./index')
 class ReactProductionRenderingService extends ReactRenderingService {
   createServer() {
     const service = express()
-    service.use(express.static(STATIC_PATH))
+    service.use(express.static(STATIC_PATH, {index: false}))
     this.setService(service)
   }
 }
