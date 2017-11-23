@@ -2,7 +2,7 @@ import DOM from 'react-dom/server'
 import React from 'react'
 import fs from 'fs'
 
-import { ServerStyleSheet } from 'styled-components'
+import {ServerStyleSheet} from 'styled-components'
 
 import Application from '../components/application'
 
