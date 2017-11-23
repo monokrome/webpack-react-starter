@@ -1,4 +1,4 @@
-class ReactRenderingService {
+export default class ReactRenderingService {
   options: Object
   render: Function
   service: Object
@@ -31,5 +31,3 @@ class ReactRenderingService {
     this.service.listen(process.env.PORT || port || 3030)
   }
 }
-
-module.exports = ReactRenderingService

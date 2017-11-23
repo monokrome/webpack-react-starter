@@ -1,11 +1,12 @@
-const DOM = require('react-dom/server')
-const React = require('react')
-const fs = require('fs')
+import DOM from 'react-dom/server'
+import React from 'react'
+import fs from 'fs'
 
-const Application = require('../components/application').default
-const { ServerStyleSheet } = require('styled-components')
+import { ServerStyleSheet } from 'styled-components'
 
-module.exports = function render(request: Object) {
+import Application from '../components/application'
+
+export default function render(request: Object) {
   const sheet = new ServerStyleSheet()
   const document = DOM.renderToString(sheet.collectStyles(<Application />))
   const stylesheet = sheet.getStyleTags()

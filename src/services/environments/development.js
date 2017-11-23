@@ -1,8 +1,8 @@
-const configuration = require('../../../webpack.config.js')
-const webpack = require('webpack')
-const WebpackDevServer = require('webpack-dev-server')
+import webpack from 'webpack'
+import WebpackDevServer from 'webpack-dev-server'
 
-const ReactRenderingService = require('./index')
+import ReactRenderingService from './index'
+import configuration from '../../../webpack.config'
 
 const DEV_CLIENT_PATH = 'webpack-dev-server/client?http://localhost:3030'
 
@@ -15,7 +15,7 @@ for (const key in configuration.entry) {
   configuration.entry[key].unshift('webpack/hot/dev-server')
 }
 
-class ReactDevelopmentRenderingService extends ReactRenderingService {
+export default class ReactDevelopmentRenderingService extends ReactRenderingService {
   createServer() {
     this.setService(
       new WebpackDevServer(webpack(configuration), {
@@ -25,5 +25,3 @@ class ReactDevelopmentRenderingService extends ReactRenderingService {
     )
   }
 }
-
-module.exports = ReactDevelopmentRenderingService
