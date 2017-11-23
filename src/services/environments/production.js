@@ -10,7 +10,7 @@ function renderToResponse(request: Object, response: Object) {
   response.end(render(request))
 }
 
-export default class ReactProductionRenderingService extends ReactRenderingService {
+export default class extends ReactRenderingService {
   createServer() {
     const service = express()
     service.use(express.static(STATIC_PATH, {index: false}))

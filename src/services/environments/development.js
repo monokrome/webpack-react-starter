@@ -15,7 +15,7 @@ for (const key in configuration.entry) {
   configuration.entry[key].unshift('webpack/hot/dev-server')
 }
 
-export default class ReactDevelopmentRenderingService extends ReactRenderingService {
+export default class extends ReactRenderingService {
   createServer() {
     this.setService(
       new WebpackDevServer(webpack(configuration), {

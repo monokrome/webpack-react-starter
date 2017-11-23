@@ -8,7 +8,7 @@
     "develop": "npm run development",
     "development": "cross-env NODE_ENV=development npm run services",
     "frontend": "cross-env NODE_ENV=development webpack-dev-server --hot --inline",
-    "lint": "flow-typed install && prettier-eslint --write \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint": "flow-typed install && eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
     "precommit": "npm run lint",
     "production": "cross-env NODE_PATH=./lib NODE_ENV=production node lib/services",
     "services": "cross-env NODE_PATH=./src nodemon -d 3 -w package.json -w .babelrc -w webpack.config.js -e js -e jsx -x babel-node src/services",
