@@ -1,6 +1,8 @@
 React Webpack Starter
 =====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/monokrome/webpack-react-starter.svg)](https://greenkeeper.io/)
+
 
 This is a project providing a minimal boilerplate for getting started with
 server-side rendering as well as static rendering for React projects.
